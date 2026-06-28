@@ -18,10 +18,11 @@
 
         <div class="collapse navbar-collapse" id="mainNavbar">
             <!-- 左側：検索ボックス -->
-            <form class="d-flex ms-auto me-3 my-2 my-lg-0" role="search">
+            <form class="d-flex ms-auto me-3 my-2 my-lg-0" role="search" action="{% url 'search' %}" method="get">
                 <input
                     class="form-control me-2"
                     type="search"
+                    name="q"
                     placeholder="本を検索"
                     aria-label="本を検索"
                 >

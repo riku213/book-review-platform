@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %} Search Books | Book Review Platform {% endblock %}
+
+{% block content %}
+<!-- 検索ページのメイン -->
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+
+        <h1 class="h3 mb-4">本を検索する</h1>
+
+        <!-- 検索フォーム -->
+        <form class="card shadow-sm mb-4 p-3" method="get">
+            <div class="input-group">
+                <input
+                    type="text"
+                    class="form-control"
+                    name="q"
+                    placeholder="本のタイトルを入力してください"
+                    aria-label="本のタイトルを入力してください"
+                >
+                <button class="btn btn-primary" type="submit">検索</button>
+            </div>
+        </form>
+
+        <!-- 検索結果エリア -->
+        <div class="card shadow-sm">
+            <div class="class-body">
+                <h2 class="h5 mb-3">検索結果</h2>
+                <!-- ここに後でGoogle Books API の結果を表示する -->
+                <div class="list-group-item text-muted">
+                    ここに検索結果が表示されます．
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
