@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <!-- アプリ名 -->
+        <a class="navbar-brand fw-bold" href="#">Book Review</a>
+
+        <!-- 画面が狭い時の折りたたみボタン -->
+         <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar"
+            aria-expanded="false"
+            aria-label="ナビゲーションの切り替え"
+        >
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <!-- 左側：検索ボックス -->
+            <form class="d-flex ms-auto me-3 my-2 my-lg-0" role="search">
+                <input
+                    class="form-control me-2"
+                    type="search"
+                    placeholder="本を検索"
+                    aria-label="本を検索"
+                >
+                <button class="btn btn-outline-light" type="submit">検索</button>
+            </form>
+
+            <!-- 右側：プロフィールボタン -->
+             <a class="btn btn-warning fw-bold" href="#">プロフィール</a>
+        </div>
+    </div>
+</nav>

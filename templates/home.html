@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Home | Book Review Platform{% endblock %}
+
+{% block content %}
+<!-- ホーム画面のメイン部分 -->
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <h1 class="h3 mb-4">新着の本の感想</h1>
+
+        <div class="list-group">
+            <article class="list-group-item mb-3 rounded shadow-sm">
+                <div class="d-flex justify-content-between ailgn-items-start">
+                    <div>
+                        <h2 class="h5 mb-1">本のタイトルが入ります</h2>
+                        <p class="text-muted mb-2">投稿者名 / 2026-06-28</p>
+                    </div>
+                    <span class="badge bg-primary">* 4.5</span>
+                </div>
+                <p class="mb-1">
+                    ここに本の感想の内容が入ります。ここに本の感想の内容が入ります。ここに本の感想の内容が入ります。
+                </p>
+            </article>
+
+            <article class="list-group-item mb-3 rounded shadow-sm">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                        <h2 class="h5 mb-1">
+                            別の本のタイトル
+                        </h2>
+                        <p class="text-muted mb-2">投稿者名 / 2026-06-28</p>
+                    </div>
+                    <span class="badge bg-primary">* 4.0</span>
+                </div>
+                <p class="mb-0">
+                    タイムラインはこのようにカードを縦に並べるだけ．
+                </p>
+            </article>
+        </div>
+    </div>
+</div>
+{% endblock %}
