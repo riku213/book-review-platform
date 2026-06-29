@@ -5,19 +5,24 @@
 {% block content %}
 <!-- 検索ページのメイン -->
 <div class="row justify-content-center">
-    <div class="col-lg-8">
-
-        <h1 class="h3 mb-4">本を検索する</h1>
+    <div class="col-lg-10">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4">
+            <div>
+                <h1 class="h3 mb-1" id="searchTitle">本を検索する</h1>
+                <p class="text-muted mb-0" id="searchSubtitle">Google Books API で本を探します</p>
+            </div>
+        </div>
 
         <!-- 検索フォーム -->
-        <form class="card shadow-sm mb-4 p-3" method="get">
+        <form class="card shadow-sm mb-4 p-3" action="{% url 'search' %}" method="get">
             <div class="input-group">
                 <input
-                    type="text"
+                    type="search"
                     class="form-control"
                     name="q"
                     placeholder="本のタイトルを入力してください"
                     aria-label="本のタイトルを入力してください"
+                    id="searchInput"
                 >
                 <button class="btn btn-primary" type="submit">検索</button>
             </div>
@@ -25,15 +30,34 @@
 
         <!-- 検索結果エリア -->
         <div class="card shadow-sm">
-            <div class="class-body">
+            <div class="card-body">
                 <h2 class="h5 mb-3">検索結果</h2>
                 <!-- ここに後でGoogle Books API の結果を表示する -->
-                <div class="list-group-item text-muted">
-                    ここに検索結果が表示されます．
+                <div id="resultArea" class="row g-3">
+                    <div class="col-12">
+                        <div class="alert alert-light border mb-0">
+                            検索ワードを入力するとここに結果が表示されます
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get('q');
+
+    const searchTitle = document.getElementById('searchTitle');
+    const searchSubtitle = document.getElementById('searchSubtitle');
+    const searchInput = document.getElementById('searchInput');
+
+    if (query) {
+        searchTitle.textContent = `「${query}」の検索結果`;
+        searchSubtitle.textContent = "Google Books API の結果をここに表示します";
+        searchInput.value = query;
+    }
+</script>
 
 {% endblock %}
